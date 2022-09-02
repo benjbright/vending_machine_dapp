@@ -1,6 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vending Machine Dapp
+
+Tutorial project using Solidity, Web3.js and NextJs
+
+## Notes and key learning points
+
+29:00 Truffle set up
+
+- set up new folder - vending_machine
+- run `npm init`
+- run `npm install -g truffle` to install truffle globally
+- can then run `truffle init` to intitialise a new truffle project
+- install `dotenv` and `npm install @truffle/hdwallet-provider`
+- complete the truffle config and then run `truffle migrate --network goerli`
+- contract address on Goerli test network 0x059D1FFF845c3df71E6898931898Ef182e9E06E5
+- NOTE - changed the value on the contract to 0.001 ether for testing purposes
+
+46:00 Front end connection
+
+1. Front end app
+   - ```javascript
+     const localContract = new web3.eth.Contract(abi, address)
+     ```
+2. ABI
+3. Blockchain - Vending Machine smart contract
+
+- think of the ABI as a passport between the Javascript and Ethereum worlds
+- need to compile the contract locally to generate the ABI
+- install the solidity compiler `npm install solc`
+- Add the compile script in the package.json file
+- `npm run compile`
+
+56:00 Front end design
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
