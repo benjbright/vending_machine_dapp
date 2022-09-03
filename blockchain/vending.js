@@ -1,9 +1,9 @@
 import Web3 from "web3"
-const { INFURA_API_URL } = require("../secrets.json")
+// const { INFURA_API_URL } = require("../secrets.json")
 
-const provider = new Web3.providers.HttpProvider(INFURA_API_URL)
+// const provider = new Web3.providers.HttpProvider(INFURA_API_URL)
 
-const web3 = new Web3(provider)
+// const web3 = new Web3(provider)
 
 const abi = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
@@ -44,9 +44,16 @@ const abi = [
   },
 ]
 
-const vmContract = new web3.eth.Contract(
-  abi,
-  "0x059D1FFF845c3df71E6898931898Ef182e9E06E5"
-)
+const vendingMachineContract = (web3) => {
+  return new web3.eth.Contract(
+    abi,
+    "0x059D1FFF845c3df71E6898931898Ef182e9E06E5"
+  )
+}
 
-export default vmContract
+// const vmContract = new web3.eth.Contract(
+//   abi,
+//   "0x059D1FFF845c3df71E6898931898Ef182e9E06E5"
+// )
+
+export default vendingMachineContract
